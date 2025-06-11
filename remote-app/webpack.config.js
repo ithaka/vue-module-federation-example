@@ -30,7 +30,7 @@ module.exports = {
       name: "remoteApp",
       filename: "remoteEntry.js",
       exposes: {
-        "./MfeRemote": "./src/main"
+        "./MfeRemote": "./src/bootstrap"
       },
       shared: {
         ...packageJson.dependencies,

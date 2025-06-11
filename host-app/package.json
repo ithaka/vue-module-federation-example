@@ -5,6 +5,7 @@
     "serve": "webpack serve --mode development"
   },
   "dependencies": {
+    "@vue/apollo-composable": "^4.2.2",
     "vue": "3.5.12"
   },
   "devDependencies": {

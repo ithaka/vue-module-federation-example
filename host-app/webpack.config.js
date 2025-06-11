@@ -1,9 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin } = require('vue-loader');
 const { ModuleFederationPlugin } = require("webpack").container;
+const packageJson = require("./package.json");
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: "./src/index.js",
   mode: "development",
   devServer: {
     port: 8080
@@ -29,6 +30,9 @@ module.exports = {
       remotes: {
         remoteApp: 'remoteApp@http://localhost:8081/remoteEntry.js',
       },
+      shared: {
+        ...packageJson.dependencies,
+      }
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
