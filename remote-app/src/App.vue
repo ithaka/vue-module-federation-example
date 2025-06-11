@@ -1,3 +1,3 @@
 <template>
-  <div>Remote App Running</div>
+  <div>Remote App Running v3</div>
 </template>
