@@ -1,6 +1,9 @@
 {
-  "name": "remote-app",
+  "name": "mfe-vue-versiontest-v2",
   "version": "1.0.0",
+  "author": "loca",
+  "description": "Part of the version conflict experiment",
+  "private": true,
   "scripts": {
     "serve": "webpack serve --mode development"
   },
@@ -9,7 +12,7 @@
     "@vue/apollo-composable": "^4.2.2",
     "graphql": "^16.11.0",
     "graphql-tag": "^2.12.6",
-    "vue": "3.5.12"
+    "vue": "^3.5.16"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.5.16",

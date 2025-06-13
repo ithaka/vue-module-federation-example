@@ -57,10 +57,10 @@ function cleanPackageName(filename) {
 }
 
 module.exports = {
-  entry: "./src/sandbox.js",
+  entry: "./src/sandbox/index",
   mode: "development",
   devServer: {
-    port: 8081
+    port: 8082
   },
   output: {
     chunkFilename: generateFriendlyChunkFilename,
@@ -84,10 +84,10 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: "remoteApp",
+      name: "remoteApp2",
       filename: "remoteEntry.js",
       exposes: {
-        "./MfeRemote": "./src/bootstrap"
+        "./MfeRemote2": "./src/bootstrap",
       },
       shared: {
         ...packageJson.dependencies,

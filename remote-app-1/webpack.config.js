@@ -1,13 +1,13 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { VueLoaderPlugin } = require('vue-loader');
 const { ModuleFederationPlugin } = require("webpack").container;
+const { VueLoaderPlugin } = require('vue-loader');
 const packageJson = require("./package.json");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/sandbox/index",
   mode: "development",
   devServer: {
-    port: 8080
+    port: 8081
   },
   module: {
     rules: [
@@ -24,9 +24,10 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      remotes: {
-        remoteApp1: 'remoteApp1@http://localhost:8081/remoteEntry.js',
-        remoteApp2: 'remoteApp2@http://localhost:8082/remoteEntry.js',
+      name: "remoteApp1",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./MfeRemote1": "./src/bootstrap",
       },
       shared: {
         ...packageJson.dependencies,
@@ -35,11 +36,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html"
     })
-  ],
-  resolve: {
-    extensions: [".js", ".vue"],
-    alias: {
-      vue: "@vue/runtime-dom"
-    }
-  }
+  ]
 };
