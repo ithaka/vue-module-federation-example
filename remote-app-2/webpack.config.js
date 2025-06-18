@@ -13,7 +13,12 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        use: "vue-loader"
+        use: {
+          loader: "vue-loader",
+          options: {
+            hotReload: false
+          },
+        },
       },
       {
         test: /\.css$/,

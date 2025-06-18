@@ -13,17 +13,10 @@
 </template>
 
 <script setup>
-import { onMounted, ref, useTemplateRef, version } from 'vue';
+import { onMounted, useTemplateRef, version } from 'vue';
 import packageJson from "../package.json";
 
 const vueVersion = packageJson.dependencies.vue;
-
-const counter = ref({
-  count: 0,
-  increment: () => {
-    counter.value.count++;
-  }
-});
 
 const remoteMountPointRef1 = useTemplateRef("remoteMountPoint1");
 const remoteMountPointRef2 = useTemplateRef("remoteMountPoint2");
