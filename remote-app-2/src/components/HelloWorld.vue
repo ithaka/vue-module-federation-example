@@ -16,7 +16,7 @@
 import { computed, version } from "vue";
 import packageJson from "../../package.json";
 import gql from "graphql-tag";
-import { useQuery } from "@vue/apollo-composable";
+import { useQuery } from "@ithaka/graphql-client-vue";
 
 const vueVersion = packageJson.dependencies.vue;
 const FetchCountry = gql`

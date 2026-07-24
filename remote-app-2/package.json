@@ -8,10 +8,11 @@
     "serve": "webpack serve --mode development"
   },
   "dependencies": {
-    "@apollo/client": "^3.13.8",
-    "@vue/apollo-composable": "^4.2.2",
-    "graphql": "^16.11.0",
+    "@apollo/client": "^4.2.8",
+    "@ithaka/graphql-client-vue": "0.1.0-commit-0940a494",
+    "graphql": "^17.0.2",
     "graphql-tag": "^2.12.6",
+    "rxjs": "^7.8.2",
     "vue": "^3.5.16"
   },
   "devDependencies": {

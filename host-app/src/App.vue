@@ -26,7 +26,9 @@ onMounted(async () => {
   const remote1 = await import('remoteApp1/MfeRemote1');
   remote1.mount(remoteMountPointRef1.value);
 
-  const remote2 = await import('remoteApp2/MfeRemote2');
-  remote2.mount(remoteMountPointRef2.value);
+  setTimeout(async () => {
+    const remote2 = await import('remoteApp2/MfeRemote2');
+    remote2.mount(remoteMountPointRef2.value);
+  }, 5000);
 });
 </script>
