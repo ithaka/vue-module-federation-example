@@ -1,6 +1,6 @@
 import {createApp, h, provide} from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
-import {DefaultApolloClient} from "@vue/apollo-composable";
+import {DefaultApolloClient} from "@ithaka/graphql-client-vue";
 import {notificationsClient} from "./vue-apollo";
 
 const mount = async (mountPoint) => {

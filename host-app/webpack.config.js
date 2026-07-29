@@ -30,6 +30,10 @@ module.exports = {
       },
       shared: {
         ...packageJson.dependencies,
+        vue: {
+          singleton: true,
+          requiredVersion: packageJson.dependencies.vue
+        }
       }
     }),
     new HtmlWebpackPlugin({
